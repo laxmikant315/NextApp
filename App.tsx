@@ -1,19 +1,43 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import "react-native-gesture-handler";
+import React, { useState } from "react";
+
+import { AppLoading, Notifications } from "expo";
+import { Ionicons } from "@expo/vector-icons";
+import * as Font from "expo-font";
+
+import AppProvider from "./src/providers/app.provider";
+import PushNotifications from "./src/components/push-notifications/push-notifications.component";
+import AppNavigation from "./AppNavigation.component";
+
+
+
 
 export default function App() {
+  const [isReady, setIsReady] = useState(false);
+ 
+  useState(() => {
+    Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+      ...Ionicons.font,
+    }).then((res) => {
+      setIsReady(true);
+    });
+  });
+
+
+ 
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <>
+      {!isReady ? (
+        <AppLoading />
+      ) : (
+        <AppProvider>
+          <PushNotifications />
+            <AppNavigation/>
+        </AppProvider>
+      )}
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

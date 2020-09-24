@@ -12,7 +12,7 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -21,8 +21,17 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "extra": {
+      "apiUrl": "https://next-stock-31.herokuapp.com"
+    },
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "package": "com.teksa.nextapp",
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json"
+    },
+    "description": ""
   }
 }

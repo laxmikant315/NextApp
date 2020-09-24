@@ -1,0 +1,30 @@
+[
+    {
+      "id": "Trend line",
+      "color": "#3f51b5",
+      "data": [
+        {
+          "x": "plane",
+          "y": 161
+        },
+        {
+          "x": "helicopter",
+          "y": 142
+        },
+        {
+          "x": "boat",
+          "y": 228
+        },
+        {
+          "x": "train",
+          "y": 12
+        },
+        {
+          "x": "subway",
+          "y": 199
+        }
+       
+      ]
+    }
+    
+  ]
