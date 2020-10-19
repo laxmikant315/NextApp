@@ -31,7 +31,6 @@ const Stocks = ({ stocks,fetchData }: any) => {
   const { setSelectedStock } = useContext(AppContext);
   const [refreshing, setRefreshing] = useState(false);
 
-
   return (
     <Container>
       <Content
@@ -46,7 +45,9 @@ const Stocks = ({ stocks,fetchData }: any) => {
         />
       }
       >
+      
         <List>
+        
           {stocks &&
             stocks.map((stock: any, index: number) => (
               <ListItem key={index}>

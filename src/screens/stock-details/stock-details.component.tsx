@@ -157,18 +157,20 @@ const StockDetailsHome = ({ navigation }: any) => {
   };
   return (
     <Container>
-      <Header hasSegment>
-        <Left>
-          <Button
-            transparent
-            onPress={() => {
-              navigation.navigate("Home");
-            }}
-          >
-            <Icon name="arrow-back" />
-          </Button>
-        </Left>
+      <Header >
         <Body>
+        <Text
+                  style={{
+                  
+                    color: "#fff",
+                    fontSize: 20,
+                  }}
+                >
+                  {selectedStock.symbol}
+                </Text>
+        </Body>
+       
+        <Right>
           <Segment>
             <Button
               active={segment === "CHART"}
@@ -185,12 +187,8 @@ const StockDetailsHome = ({ navigation }: any) => {
               <Text>Calc</Text>
             </Button>
           </Segment>
-        </Body>
-        <Right>
-          <Button transparent>
-            <Icon name="search" />
-          </Button>
         </Right>
+      
       </Header>
       <Content>
         {segment === "CHART" && (
@@ -198,15 +196,7 @@ const StockDetailsHome = ({ navigation }: any) => {
            
             {selectedStock !== null && (
               <>
-                <Text
-                  style={{
-                    textAlign: "center",
-                    color: "#0e0e0e",
-                    fontSize: 20,
-                  }}
-                >
-                  {selectedStock.symbol}
-                </Text>
+               
                 <StockDetails stock={selectedStock} />
               </>
             )}

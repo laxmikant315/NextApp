@@ -34,3 +34,19 @@ export const pushOnApp=()=> {
   return axios.get(`${apiUrl}/pushOnApp`).then(x=>x.data);
 }
 
+export const getSwingExecute=(order:{ symbol:string, orderPrice:number})=> {
+ 
+  return axios.post(`${apiUrl}/swing/v2/execute`,{...order});
+}
+export const getSwingExecuteOut=(order:{ symbol:string, orderPrice:number})=> {
+ 
+  return axios.post(`${apiUrl}/swing/v2/executeOut`,{...order});
+}
+
+export const getTransactions=()=> {
+ 
+  return axios.get(`${apiUrl}/swing/v2/transactions`).then(x=>x.data);
+}
+
+
+
